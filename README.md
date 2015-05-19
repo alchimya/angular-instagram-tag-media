@@ -21,7 +21,7 @@ With this directive you can consume the data requested to the Instagram server w
   attr name   |     type        |   description    
 --------------| ----------------|-------------------------------------------------------------------
 tagName       | one-way binding | hashtag of media pics
-clientId      | one-way binding | Instagram app CLIENT ID
+clientId      | one-way binding | Instagram app CLIENT ID (see https://instagram.com/developer/)
 reloadMs      | one-way binding | Milliseconds for reloading data from the server
 slideMs       | one-way binding | Milliseconds to activare a slider images service. Use "auto" to implement an auto calculation interval.
 instagramData | two-way binding | Set here your data source  for the response body
