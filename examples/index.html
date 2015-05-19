@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Test Http Get</title>
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+</head>
+<body>
+
+
+
+    <div ng-controller="InstagramTagMediaController">
+        <h1>Last refresh: {{lastLoadDate}}</h1>
+        <h1>Slider of last pics with #{{hashtag}} hashtag</h1>
+        <span ng-show="isRequestInProgress">Loading...</span>
+        <ng-dv-instagram-tag-media
+                tag-name={{hashtag}}
+                client-id="{{ClientId}}"
+                reload-ms="60000"
+                slide-ms="auto">
+
+            <!--data presentation-->
+            <div>
+                <img ng-src="{{lastImageUrl}}" style="border-style: solid;border-width: 2px"/>
+                <div>
+                    <span>{{pageOf}}</span>
+                </div>
+            </div>
+        </ng-dv-instagram-tag-media>
+
+        <h1>Table of last pics with #{{hashtag}}  hashtag</h1>
+        <ng-dv-instagram-tag-media
+                tag-name={{hashtag}}
+                client-id="{{ClientId}}"
+                reload-ms="60000"
+                instagram-data="instagramJSON">
+                <!--data presentation-->
+                <table>
+                    <thead>
+                    <tr>
+                        <th>low_resolution</th>
+                        <th>standard_resolution</th>
+                        <th>latitude</th>
+                        <th>ongitude</th>
+                        <th>likes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in instagramJSON.data">
+                        <td>
+                            <a href="{{item.images.low_resolution.url}}" target="_blank">{{item.images.low_resolution.url}}</a>
+                        </td>
+                        <td>
+                            <a href="{{item.images.standard_resolution.url}}" target="_blank">{{item.images.standard_resolution.url}}</a>
+                        </td>
+                        <td>
+                            {{item.location.latitude}}
+                        </td>
+                        <td>
+                            {{item.location.longitude}}
+                        </td>
+                        <td>
+                            {{item.likes.count}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+        </ng-dv-instagram-tag-media>
+    </div>
+
+
+    <script src="angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="controllers/InstagramTagMediaController.js"></script>
+    <script src="../source/angular-instagram-tag-media.js"></script>
+
+</body>
+</html>
