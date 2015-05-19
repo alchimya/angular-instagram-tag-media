@@ -36,13 +36,14 @@ ngDvInstagramTagMedia_NextItem      | custom_data     | it will be raised after 
 
 - instagram_data= see https://instagram.com/developer/endpoints/tags/
 - custom_data is an object with this structure:
+```javascript
 var custom_data={
   item: item of the instagram data array,
   totalItems: length of instagram data array,
   currentIndex:_currentSlideIndex,
   imageUrl: .images.low_resolution.url of an item of the instagram data array,
 };
-
+```
 <br/>
 ![ScreenShot](https://raw.github.com/alchimya/angular-instagram-tag-media/master/screenshots/angular-instagram-tag-media.gif)
 
