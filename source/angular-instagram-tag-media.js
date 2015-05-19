@@ -16,7 +16,7 @@
  * clientId         one-way binding     Instagram app CLIENT ID
  * reloadMs         one-way binding     Milliseconds for reloading data from the server
  * slideMs          one-way binding     Milliseconds to activare a slider images service.
- *                                      Use auto to implementa an auto calculation interval
+ *                                      Use "auto" to implement an auto calculation interval
  * instagramData    two-way binding     Set here your data source  for the response body
  * ------------------------------------------------------------------------------------------------------
  * @events
