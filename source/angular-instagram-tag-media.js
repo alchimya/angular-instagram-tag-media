@@ -2,10 +2,10 @@
  * Created by domenicovacchiano on 19/05/15.
  */
 /**
- * @name        ngDvHttpGet
+ * @name        ngDvInstagramTagMediaModule
  * @restrict    E
  * @description
- * Allows to execute a GET on a remote server
+ * Allows to get a list of recently Instagram tagged media.
  * @references
  * https://instagram.com/developer/endpoints/tags/
  * @isolated_scope
@@ -32,7 +32,7 @@
  * ------------------------------------------------------------------------------------------------------
 
  *  -------------------------------------------------------------
- *  Events implementations
+ *  Events implementation
  *  -------------------------------------------------------------
  *  $scope.$on('ngDvInstagramTagMedia_NextItem',function(event,data){
  *       //your code
